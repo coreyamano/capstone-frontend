@@ -1,8 +1,10 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
-import ProductsIndex from "../views/ProductsIndex.vue";
-import ProductsShow from "../views/ProductsShow.vue";
+import ProductsIndex from "../views/Products/ProductsIndex.vue";
+import ProductsShow from "../views/Products/ProductsShow.vue";
+import OrderedItemsIndex from "../views/OrderedItems/OrderedItemsIndex.vue";
+import ChecksIndex from "../views/Checks/ChecksIndex.vue";
 import Signup from "../views/Signup.vue";
 import Login from "../views/Login.vue";
 import Logout from "../views/Logout.vue";
@@ -47,6 +49,16 @@ const routes = [
     path: "/products/:id",
     name: "ProductsShow",
     component: ProductsShow,
+  },
+  {
+    path: "/ordered_items",
+    name: "OrderedItemsIndex",
+    component: OrderedItemsIndex,
+  },
+  {
+    path: "/checks",
+    name: "ChecksIndex",
+    component: ChecksIndex,
   },
 
 ];

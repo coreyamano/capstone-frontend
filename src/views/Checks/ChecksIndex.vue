@@ -1,11 +1,12 @@
 <template>
-  <div class="products-index">
+  <div class="checks-index">
     <h1>{{ message }}</h1>
-    <div v-for="product in products" v-bind:key="product.id">
-      <p>{{ product.id }}</p>
-      <p>{{ product.item_name }}</p>
-      <p>{{ product.description }}</p>
-      <p>{{ product.price }}</p>
+    <div v-for="check in checks" v-bind:key="check.id">
+      <p>{{ check.id }}</p>
+      <p>{{ check.subtotal }}</p>
+      <p>{{ check.tax }}</p>
+      <p>{{ check.total }}</p>
+      <br />
       <!-- <p>{{ product.image }}</p> -->
       <!-- <router-link v-bind:to="`/products/${product.id}`">
         <img v-bind:src="products.image" /> -->
@@ -21,17 +22,17 @@ import axios from "axios";
 export default {
   data: function () {
     return {
-      message: "All Products!",
-      products: [],
+      message: "All Checks",
+      checks: [],
       // searchTerm: "",
     };
   },
   created: function () {
-    this.indexProducts();
+    this.indexChecks();
   },
   methods: {
-    indexProducts: function () {
-      axios.get("/products").then((response) => {
+    indexChecks: function () {
+      axios.get("/checks").then((response) => {
         console.log(response.data);
         this.products = response.data;
       });

@@ -21,7 +21,7 @@ import axios from "axios";
 export default {
   data: function () {
     return {
-      message: "View Product",
+      message: "View Item",
       product: {},
     };
   },
